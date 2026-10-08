@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <!-- La page ne peut rien charger d'ailleurs : ni police, ni script, ni image, ni mesure d'audience. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+  <title>Politique de confidentialité — ChatIsBack</title>
+  <style>
+    /* Style natif YouTube, polices du système. Contrastes WCAG mesurés (AA = 4,5:1 pour le texte). */
+    :root {
+      color-scheme: light dark;
+      --fond: #ffffff;
+      --texte: #0f0f0f;    /* 19,17:1 sur --fond */
+      --second: #606060;   /*  6,29:1 */
+      --lien: #065fd4;     /*  5,84:1 */
+      --filet: #e5e5e5;    /* séparateur décoratif */
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --fond: #0f0f0f;
+        --texte: #f1f1f1;  /* 16,97:1 sur --fond */
+        --second: #aaaaaa; /*  8,25:1 */
+        --lien: #3ea6ff;   /*  7,40:1 */
+        --filet: #3f3f3f;  /* séparateur décoratif */
+      }
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--fond);
+      color: var(--texte);
+      font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      overflow-wrap: break-word;
+    }
+    .colonne { max-width: calc(70ch + 32px); margin: 0 auto; padding-left: 16px; padding-right: 16px; }
+
+    header { border-bottom: 1px solid var(--filet); }
+    header .colonne {
+      display: flex; align-items: baseline; justify-content: space-between; gap: 16px;
+      padding-top: 14px; padding-bottom: 14px;
+    }
+    .nom { font-weight: 600; }
+    header a { font-size: 0.875rem; }
+
+    a { color: var(--lien); text-underline-offset: 0.18em; }
+    a:focus-visible { outline: 2px solid var(--lien); outline-offset: 2px; border-radius: 2px; }
+
+    main { padding-top: 40px; padding-bottom: 72px; }
+    section { scroll-margin-top: 24px; }
+    #en { margin-top: 64px; padding-top: 48px; border-top: 1px solid var(--filet); }
+
+    h1 { font-size: 1.75rem; line-height: 1.25; font-weight: 700; letter-spacing: -0.01em; margin: 0 0 12px; text-wrap: balance; }
+    h2 { font-size: 1.125rem; line-height: 1.35; font-weight: 600; margin: 36px 0 8px; text-wrap: balance; }
+    p { margin: 0 0 16px; text-wrap: pretty; }
+    .meta { color: var(--second); font-size: 0.9375rem; margin-bottom: 32px; }
+    ul { margin: 0 0 16px; padding-left: 1.25rem; }
+    li { margin: 6px 0; text-wrap: pretty; }
+    li::marker { color: var(--second); }
+    li > p { margin: 0; }
+    li > ul { margin: 6px 0 0; }
+    li > ul + p { margin-top: 12px; }
+    strong { font-weight: 600; }
+  </style>
+</head>
+<body>
+  <header data-interface>
+    <div class="colonne">
+      <span class="nom">ChatIsBack</span>
+      <a href="#en" hreflang="en" lang="en">English</a>
+    </div>
+  </header>
+
+  <main class="colonne">
+    <section id="fr" aria-labelledby="titre-fr">
+      <h1 id="titre-fr">Politique de confidentialité de ChatIsBack</h1>
+      <p class="meta">Dernière mise à jour&nbsp;: 2026-10-08<br>
+         Éditeur&nbsp;: ChatIsBack&nbsp;— Contact&nbsp;: chatisback.contact@gmail.com</p>
+
+      <h2>En bref</h2>
+      <ul>
+        <li>ChatIsBack n'a ni serveur, ni compte, ni statistiques, ni publicité. L'éditeur ne reçoit aucune donnée&nbsp;: rien de ce que tu fais avec l'extension ne lui parvient.</li>
+        <li>Pour afficher le chat, l'extension lit chaque page de vidéo YouTube que tu ouvres et, quand elle y trouve un indice Twitch, contacte directement, depuis ton navigateur, Twitch, YouTube et trois services d'emotes&nbsp;: 7TV, BetterTTV et FrankerFaceZ.</li>
+        <li>Ce qu'elle garde reste dans ton navigateur.</li>
+      </ul>
+
+      <h2>1.&nbsp;Ce que l'extension lit</h2>
+      <p>L'extension ne s'active que sur les pages www.youtube.com. Elle y lit&nbsp;:</p>
+      <ul>
+        <li>sur la page de la vidéo ouverte&nbsp;: son adresse, son titre, sa description, sa date de publication, le nom et l'identifiant de la chaîne, la durée et la position de lecture. Elle s'en sert pour trouver le live Twitch d'origine et afficher les messages au bon moment&#8239;;</li>
+        <li>de toutes petites images de la vidéo affichée (17&nbsp;×&nbsp;16&nbsp;pixels), pour vérifier que le chat est bien calé&#8239;;</li>
+        <li>le son de la vidéo que YouTube a déjà téléchargé pour la lecture. Sur toutes les pages YouTube, l'extension en garde une copie en mémoire, d'environ 1,5&nbsp;Mo au plus, qui disparaît quand l'onglet se ferme ou se recharge. Cette copie n'est jamais enregistrée ni envoyée&nbsp;: elle sert seulement à comparer le son de la rediffusion à celui du live&#8239;;</li>
+        <li>le nom de chaîne Twitch que tu tapes, si tu en tapes un.</li>
+      </ul>
+
+      <h2>2.&nbsp;Ce qui part de ton navigateur, et vers qui</h2>
+      <p>Il n'y a aucun intermédiaire&nbsp;: ton navigateur contacte directement les services ci-dessous, toujours en HTTPS.</p>
+      <p>Tant que la page ne donne aucun indice Twitch, rien ne part. Un indice, c'est&nbsp;:</p>
+      <ul>
+        <li>un lien twitch.tv dans la description&#8239;;</li>
+        <li>une chaîne connue de la table intégrée à l'extension (tirée de Wikidata)&#8239;;</li>
+        <li>un titre ou un nom de chaîne qui annonce une rediffusion&#8239;;</li>
+        <li>une vidéo déjà reconnue lors d'une visite précédente&#8239;;</li>
+        <li>un lien «&nbsp;moment partagé&nbsp;»&#8239;;</li>
+        <li>un nom que tu tapes&#8239;;</li>
+        <li>un clic sur l'icône.</li>
+      </ul>
+      <p>Comme pour toute visite d'un site, ces services voient ton adresse IP et les informations techniques que le navigateur joint à chaque requête, par exemple le fait qu'elle part du site youtube.com (la page YouTube demande au navigateur de n'indiquer aux autres sites que son nom de site, pas l'adresse de la vidéo). Leur propre politique de confidentialité s'applique.</p>
+      <ul>
+        <li>
+          <p><strong>Twitch</strong> (gql.twitch.tv) reçoit&nbsp;:</p>
+          <ul>
+            <li>le nom de la chaîne Twitch, trouvé dans la page, dans la table intégrée ou tapé par toi&#8239;;</li>
+            <li>les numéros de la chaîne et des lives concernés&#8239;;</li>
+            <li>le nom de la chaîne YouTube, débarrassé de mots comme «&nbsp;replay&nbsp;» ou «&nbsp;VOD&nbsp;» (parfois seulement son premier mot), dans deux cas&nbsp;: quand tu cliques sur l'icône sur une vidéo pas encore reconnue, ou quand la page s'annonce comme une rediffusion (un titre ou un nom de chaîne qui contient «&nbsp;replay&nbsp;», «&nbsp;rediff&nbsp;», «&nbsp;VOD&nbsp;»…) sans lien Twitch ni chaîne connue. Il sert à te proposer des chaînes Twitch.</li>
+          </ul>
+          <p>En retour, Twitch envoie la liste des lives, le chat, les badges, les clips et les chapitres. Ton compte Twitch n'est jamais utilisé.</p>
+        </li>
+        <li><strong>Les serveurs vidéo de Twitch</strong>, en «&nbsp;cloudfront.net&nbsp;»&nbsp;: pour chaque live, Twitch indique lui-même l'adresse du serveur qui le sert, et cette adresse peut changer d'un live à l'autre. L'extension a donc le droit de contacter toutes les adresses en «&nbsp;cloudfront.net&nbsp;»&#8239;; pour la vidéo, elle ne contacte que celles que Twitch indique pour le live concerné. Elle y lit les vignettes du live et de courts morceaux de sa vidéo, dans la qualité la plus légère disponible&nbsp;: le début de certains morceaux, quelques morceaux de 10&nbsp;secondes, et de 40&nbsp;secondes à environ 3&nbsp;minutes autour de l'instant vérifié, dont seul le son est analysé. Tout cela sert seulement à caler le chat. Ces requêtes partent sans cookies. Rien n'est affiché, enregistré ni proposé au téléchargement.</li>
+        <li><strong>Les serveurs d'images du chat</strong> fournissent les images des emotes et des badges affichés. Il s'agit de static-cdn.jtvnw.net et assets.twitch.tv (Twitch), cdn.7tv.app, cdn.betterttv.net, cdn.frankerfacez.com et d3aqoihi2n8ty8.cloudfront.net.</li>
+        <li><strong>7TV</strong> (7tv.io), <strong>BetterTTV</strong> (api.betterttv.net) et <strong>FrankerFaceZ</strong> (api.frankerfacez.com) reçoivent le numéro de la chaîne Twitch et renvoient les emotes de cette chaîne.</li>
+        <li><strong>YouTube</strong> (www.youtube.com, i.ytimg.com)&nbsp;: l'extension y télécharge, sans tes cookies, les planches de vignettes de la vidéo que tu regardes. Si besoin, elle relit la page de cette vidéo pour trouver ces planches.</li>
+      </ul>
+
+      <h2>3.&nbsp;Ce qui est gardé, où, et combien de temps</h2>
+      <p>Tout est rangé dans ton navigateur, dans le stockage du site youtube.com, jamais sur un serveur&nbsp;:</p>
+      <ul>
+        <li>pour chaque vidéo&nbsp;: le live Twitch associé (numéro, nom et numéro de la chaîne, libellé), les réglages du calage et tes corrections manuelles&#8239;;</li>
+        <li>pour chaque live&nbsp;: une courbe d'activité avec quelques extraits du chat (pseudo et message), ainsi que les titres des clips les plus vus, pour ne pas avoir à les retélécharger&#8239;;</li>
+        <li>tes préférences d'affichage (panneau replié, titres des clips affichés ou masqués).</li>
+      </ul>
+      <p>Ces données n'ont pas de date d'expiration. Elles restent jusqu'à ce que tu effaces les données du site youtube.com dans les paramètres de Chrome. <strong>Désinstaller l'extension ne les efface pas.</strong> Comme elles sont rangées dans le stockage de youtube.com, les scripts de YouTube y ont techniquement accès.</p>
+      <p>Une base locale, «&nbsp;tty-archives&nbsp;», ne se remplit que si un fichier de chat est ouvert. Cette version ne propose pas cette ouverture dans son interface, et la base garde au plus 3&nbsp;chats.</p>
+      <p>Un journal de diagnostic existe aussi. Il est éteint par défaut et ne s'allume que si quelqu'un le déclenche à la main.</p>
+      <p>En mémoire seulement&nbsp;: la copie du son YouTube (environ 1,5&nbsp;Mo au plus) et les repères de calage des lives en cours (6&nbsp;au plus). Rien de tout cela n'est écrit sur le disque.</p>
+
+      <h2>4.&nbsp;Seulement si tu cliques</h2>
+      <ul>
+        <li><strong>«&nbsp;Partager ce moment&nbsp;»</strong> enregistre sur ton ordinateur une image PNG. Elle contient l'image de la vidéo à cet instant, jusqu'à 12&nbsp;messages du chat avec leurs pseudos, le nom de la chaîne Twitch et l'heure dans la vidéo. Le bouton copie aussi dans ton presse-papiers un lien YouTube vers ce moment, qui peut porter le numéro du live Twitch et le calage. L'extension n'envoie rien&nbsp;: si tu publies l'image ou le lien, c'est toi qui les partages, pseudos des autres spectateurs compris.</li>
+        <li><strong>«&nbsp;Ouvrir la rediff Twitch&nbsp;»</strong> ouvre twitch.tv dans un nouvel onglet, comme n'importe quel lien.</li>
+      </ul>
+
+      <h2>5.&nbsp;Ce que l'extension ne fait pas</h2>
+      <p>Pas de compte, pas de publicité, pas de mesure d'audience, pas de vente de données. Elle ne publie rien sur Twitch ni sur YouTube et n'utilise pas tes comptes. Elle ne s'active sur aucun autre site que www.youtube.com. Elle n'exécute aucun code venu d'internet.</p>
+
+      <h2>6.&nbsp;Tes choix</h2>
+      <p>Tu peux désinstaller ChatIsBack depuis la page des extensions de Chrome, puis effacer les données du site youtube.com pour supprimer ce qu'elle a gardé. L'éditeur ne détient aucune donnée sur toi&nbsp;: il n'y a rien à lui demander, ni à corriger, ni à supprimer chez lui.</p>
+
+      <h2>7.&nbsp;Usage limité</h2>
+      <p>L'usage des données par ChatIsBack respecte la politique du Chrome Web Store sur les données des utilisateurs (Chrome Web Store User Data Policy), y compris les exigences d'usage limité (Limited Use).</p>
+
+      <h2>8.&nbsp;Changements</h2>
+      <p>Si l'extension change sa façon de traiter les données, cette page sera mise à jour, et le changement sera annoncé sur la fiche du Chrome Web Store avant de s'appliquer.</p>
+
+      <h2>Contact</h2>
+      <p>chatisback.contact@gmail.com</p>
+    </section>
+
+    <section id="en" lang="en" aria-labelledby="titre-en">
+      <h1 id="titre-en">ChatIsBack Privacy Policy</h1>
+      <p class="meta">Last updated: 2026-10-08<br>
+         Publisher: ChatIsBack&nbsp;— Contact: chatisback.contact@gmail.com</p>
+
+      <h2>In short</h2>
+      <ul>
+        <li>ChatIsBack has no server, no account, no analytics and no ads. The publisher receives no data: nothing you do with the extension reaches them.</li>
+        <li>To show the chat, the extension reads every YouTube video page you open and, when it finds a Twitch clue there, contacts Twitch, YouTube and three emote services (7TV, BetterTTV, FrankerFaceZ) directly from your browser.</li>
+        <li>What it keeps stays in your browser.</li>
+      </ul>
+
+      <h2>1.&nbsp;What the extension reads</h2>
+      <p>The extension only runs on www.youtube.com pages. There, it reads:</p>
+      <ul>
+        <li>from the open video page: its address, title, description, publication date, channel name and ID, duration and playback position. It uses them to find the original Twitch broadcast and show messages at the right moment;</li>
+        <li>tiny frames of the playing video (17&nbsp;×&nbsp;16&nbsp;pixels), to check that the chat is in sync;</li>
+        <li>the video's sound that YouTube has already downloaded for playback. On every YouTube page, the extension keeps a copy in memory, at most about 1.5&nbsp;MB, which is gone when the tab is closed or reloaded. This copy is never saved or sent: it is only used to compare the replay's sound with the broadcast's;</li>
+        <li>the Twitch channel name you type, if you type one.</li>
+      </ul>
+
+      <h2>2.&nbsp;What leaves your browser, and to whom</h2>
+      <p>There is no middleman: your browser contacts the services below directly, always over HTTPS.</p>
+      <p>As long as the page gives no Twitch clue, nothing is sent. A clue is:</p>
+      <ul>
+        <li>a twitch.tv link in the description;</li>
+        <li>a channel listed in the table built into the extension (taken from Wikidata);</li>
+        <li>a title or channel name announcing a replay;</li>
+        <li>a video already recognized on a previous visit;</li>
+        <li>a "shared moment" link;</li>
+        <li>a name you type;</li>
+        <li>a click on the icon.</li>
+      </ul>
+      <p>As with any website visit, these services see your IP address and the technical information the browser attaches to every request, such as the fact that it comes from youtube.com (the YouTube page tells the browser to give other sites only its site name, not the video's address). Their own privacy policies apply.</p>
+      <ul>
+        <li>
+          <p><strong>Twitch</strong> (gql.twitch.tv) receives:</p>
+          <ul>
+            <li>the Twitch channel name, found in the page, in the built-in table or typed by you;</li>
+            <li>the IDs of the channel and of the broadcasts concerned;</li>
+            <li>the YouTube channel name, stripped of words such as "replay" or "VOD" (sometimes only its first word), in two cases: when you click the icon on a video not yet recognized, or when the page presents itself as a replay (a title or channel name containing "replay", "rediff", "VOD"…) without a Twitch link or a known channel. It is used to suggest Twitch channels.</li>
+          </ul>
+          <p>In return, Twitch sends the list of broadcasts, the chat, badges, clips and chapters. Your Twitch account is never used.</p>
+        </li>
+        <li><strong>Twitch video servers</strong>, on "cloudfront.net": for each broadcast, Twitch itself gives the address of the server that hosts it, and that address can change from one broadcast to another. The extension is therefore allowed to contact any "cloudfront.net" address; for the video, it only contacts the ones Twitch gives for the broadcast concerned. There, it reads the broadcast's thumbnails and short pieces of its video, in the lightest quality available: the beginning of some pieces, a few 10-second pieces, and 40&nbsp;seconds to about 3&nbsp;minutes around the checked moment, of which only the sound is analysed. All of this is only used to sync the chat. These requests are sent without cookies. Nothing is shown, saved or offered for download.</li>
+        <li><strong>Chat image servers</strong> provide the images of the emotes and badges shown: static-cdn.jtvnw.net and assets.twitch.tv (Twitch), cdn.7tv.app, cdn.betterttv.net, cdn.frankerfacez.com and d3aqoihi2n8ty8.cloudfront.net.</li>
+        <li><strong>7TV</strong> (7tv.io), <strong>BetterTTV</strong> (api.betterttv.net) and <strong>FrankerFaceZ</strong> (api.frankerfacez.com) receive the Twitch channel ID and return that channel's emotes.</li>
+        <li><strong>YouTube</strong> (www.youtube.com, i.ytimg.com): the extension downloads, without your cookies, the thumbnail sheets of the video you are watching. If needed, it re-reads that video's page to find them.</li>
+      </ul>
+
+      <h2>3.&nbsp;What is kept, where, and for how long</h2>
+      <p>Everything is stored in your browser, in the youtube.com site storage, never on a server:</p>
+      <ul>
+        <li>for each video: the linked Twitch broadcast (ID, channel name and ID, label), the sync settings and your manual corrections;</li>
+        <li>for each broadcast: an activity curve with a few chat excerpts (username and message), and the titles of the most viewed clips, so they do not have to be downloaded again;</li>
+        <li>your display preferences (panel folded, clip titles shown or hidden).</li>
+      </ul>
+      <p>This data has no expiry date. It remains until you clear the youtube.com site data in Chrome's settings. <strong>Uninstalling the extension does not delete it.</strong> Because it sits in youtube.com's storage, YouTube's own scripts can technically access it.</p>
+      <p>A local database, "tty-archives", only fills if a chat file is opened. This version does not offer that in its interface, and the database keeps at most 3&nbsp;chats.</p>
+      <p>There is also a diagnostic log. It is off by default and only turns on if someone enables it by hand.</p>
+      <p>In memory only: the copy of the YouTube sound (about 1.5&nbsp;MB at most) and the sync markers of the broadcasts in progress (6&nbsp;at most). None of this is written to disk.</p>
+
+      <h2>4.&nbsp;Only when you click</h2>
+      <ul>
+        <li><strong>"Share this moment"</strong> saves a PNG image on your computer. It contains the video frame at that instant, up to 12&nbsp;chat messages with their usernames, the Twitch channel name and the time in the video. It also copies to your clipboard a YouTube link to that moment, which may carry the Twitch broadcast ID and the sync. The extension sends nothing: if you post the image or the link, you are the one sharing it, other viewers' usernames included.</li>
+        <li><strong>"Open the Twitch replay"</strong> opens twitch.tv in a new tab, like any link.</li>
+      </ul>
+
+      <h2>5.&nbsp;What the extension does not do</h2>
+      <p>No account, no ads, no analytics, no sale of data. It posts nothing on Twitch or YouTube and does not use your accounts. It does not run on any website other than www.youtube.com. It runs no code from the internet.</p>
+
+      <h2>6.&nbsp;Your choices</h2>
+      <p>You can uninstall ChatIsBack from Chrome's extensions page, then clear the youtube.com site data to delete what it kept. The publisher holds no data about you: there is nothing to request, correct or delete on their side.</p>
+
+      <h2>7.&nbsp;Limited Use</h2>
+      <p>ChatIsBack's use of data adheres to the Chrome Web Store User Data Policy, including the Limited Use requirements.</p>
+
+      <h2>8.&nbsp;Changes</h2>
+      <p>If the extension changes how it handles data, this page will be updated, and the change will be announced on the Chrome Web Store listing before it applies.</p>
+
+      <h2>Contact</h2>
+      <p>chatisback.contact@gmail.com</p>
+    </section>
+  </main>
+</body>
+</html>
