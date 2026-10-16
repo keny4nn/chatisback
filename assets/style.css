@@ -88,6 +88,12 @@ h1 {
 .slides picture:nth-child(1) { opacity: 1; animation-delay: 0s; }
 .slides picture:nth-child(2) { animation-delay: 7s; }
 .slides picture:nth-child(3) { animation-delay: 14s; }
+/* two replays only (English): 7 s each, a 14 s cycle */
+.slides[data-n="2"] picture { animation-name: slide2; animation-duration: 14s; }
+.slides[data-n="2"] picture:nth-child(2) { animation-delay: 7s; }
+@keyframes slide2 {
+  0% { opacity: 0; } 3% { opacity: 1; } 50% { opacity: 1; } 53% { opacity: 0; } 100% { opacity: 0; }
+}
 @keyframes slide {
   0% { opacity: 0; } 2% { opacity: 1; } 33% { opacity: 1; } 35% { opacity: 0; } 100% { opacity: 0; }
 }
