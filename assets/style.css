@@ -1,0 +1,122 @@
+/* ChatIsBack — the page is the product: one real capture, almost the whole screen, and three sentences.
+   No JavaScript. The only motion is the change of replay (CSS), stopped under prefers-reduced-motion. */
+@font-face {
+  font-family: "Archivo";
+  src: url("/assets/fonts/Archivo-variable-latin.woff2") format("woff2");
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* YouTube's dark theme, where the extension lives */
+  --ground: #0f0f0f;
+  --ink: #f1f1f1;
+  --ink-2: #aaaaaa;
+  --line: #272727;
+  /* the icon's purple: the only colour the page adds */
+  --purple: #9146FF;
+  /* the icon's red, only on the word YouTube */
+  --red: #FF0000;
+  --gut: clamp(16px, 2.5vw, 40px);
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; font-size: clamp(16px, 0.55vw + 9px, 22px); }
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font: 400 1rem/1.5 "Archivo", system-ui, sans-serif;
+}
+h1, p, figure { margin: 0; }
+a { color: var(--ink); text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+a:focus-visible { outline: 2px solid var(--purple); outline-offset: 3px; }
+
+/* ---------- top: the name, and two links ---------- */
+.top {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: 0.9rem var(--gut);
+}
+.brand { display: inline-flex; align-items: center; gap: 0.55rem; font-weight: 700; font-size: 1.0625rem; text-decoration: none; }
+.top nav { display: flex; align-items: center; gap: 1.5rem; font-size: 0.9375rem; }
+.top nav span { color: var(--ink-2); }
+.top nav a { text-decoration: none; }
+.top nav a:hover { text-decoration: underline; }
+
+/* ---------- the three sentences: the claim at left, how and the button at right ---------- */
+.intro {
+  display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: 1rem 4rem; align-items: end;
+  padding: 1.75rem var(--gut) 1.5rem;
+}
+h1 {
+  font-weight: 600; font-size: clamp(1.75rem, 1.1rem + 1.6vw, 2.75rem);
+  line-height: 1.12; letter-spacing: -0.015em; max-width: 19em;
+  text-wrap: balance;
+}
+.side p { color: var(--ink-2); max-width: 34em; }
+/* the two words that say where the chat comes from and where it goes, in their own colours */
+.tw { color: var(--purple); }
+.yt { color: var(--red); }
+/* the trademark sign: a sign, not two capital letters */
+.tm { font-size: 0.45em; font-weight: 400; vertical-align: 0.95em; margin-left: 0.04em; }
+.get { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.25rem; margin-top: 1.1rem; }
+/* the button: Twitch's own button shape, in the icon's purple; not a link until the store page exists */
+.soon {
+  display: inline-block; padding: 0.6rem 1.1rem; border-radius: 4px;
+  background: var(--purple); color: #fff; font-weight: 600; font-size: 0.9375rem;
+  text-decoration: none;
+}
+.soon:hover { background: #a470ff; }
+.soon:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.note { font-size: 0.875rem; }
+
+/* ---------- the capture: almost the whole screen, never taller than what is left of it ---------- */
+.screen { padding: 0 var(--gut); }
+.slides {
+  position: relative; margin: 0 auto;
+  width: min(100%, (100svh - 17rem) * 2.497);
+  aspect-ratio: 2400 / 961;
+  background: #000;
+}
+.slides picture, .slides img { position: absolute; inset: 0; width: 100%; height: 100%; }
+.slides img { object-fit: cover; object-position: 50% 0; display: block; }
+/* one replay after the other: 7 s each, a short cut between them */
+.slides picture { opacity: 0; animation: slide 21s infinite; }
+.slides picture:nth-child(1) { opacity: 1; animation-delay: 0s; }
+.slides picture:nth-child(2) { animation-delay: 7s; }
+.slides picture:nth-child(3) { animation-delay: 14s; }
+@keyframes slide {
+  0% { opacity: 0; } 2% { opacity: 1; } 33% { opacity: 1; } 35% { opacity: 0; } 100% { opacity: 0; }
+}
+.screen figcaption {
+  width: min(100%, (100svh - 17rem) * 2.497); margin: 0.6rem auto 0;
+  color: var(--ink-2); font-size: 0.875rem;
+}
+
+/* the 404: the same top, one sentence, the ways back */
+.lost { min-height: 60svh; align-items: center; }
+.lost .side p + p { margin-top: 0.75rem; }
+
+/* ---------- foot ---------- */
+.foot { padding: 3rem var(--gut) 2.5rem; color: var(--ink-2); font-size: 0.875rem; }
+.legal { max-width: 46em; }
+.links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; margin-top: 0.9rem; }
+.links a { color: var(--ink-2); }
+
+/* ---------- narrow screens: the panel alone, the text above it ---------- */
+@media (max-width: 900px) {
+  .intro { grid-template-columns: minmax(0, 1fr); gap: 1rem; padding-top: 1.25rem; }
+}
+@media (max-width: 700px) {
+  .slides { width: min(100%, 26rem); aspect-ratio: 720 / 1024; margin: 0; }
+  .screen figcaption { width: min(100%, 26rem); margin-left: 0; }
+  .top nav span { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slides picture { animation: none; }
+  .slides picture:nth-child(n + 2) { display: none; }
+}
